@@ -163,9 +163,8 @@ class URATAHrpsysConfigurator(HrpsysConfigurator):
         if self.ROBOT_NAME == "JAXON":
             abcp.default_zmp_offsets=[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0, 0, 0], [0, 0, 0]];
         elif self.ROBOT_NAME == "JAXON_RED":
-            abcp.default_zmp_offsets=[[0.05, 0.01, 0.0], [0.05, -0.01, 0.0], [0, 0, 0], [0, 0, 0]];
+            abcp.default_zmp_offsets=[[0.0, 0.01, 0.0], [0.0, -0.01, 0.0], [0, 0, 0], [0, 0, 0]];
         abcp.move_base_gain=0.8
-        abcp.transition_time=5.0
         self.abc_svc.setAutoBalancerParam(abcp)
         # kf setting
         kfp=self.kf_svc.getKalmanFilterParam()[1]
@@ -222,7 +221,7 @@ class URATAHrpsysConfigurator(HrpsysConfigurator):
             stp.eefm_leg_inside_margin=0.05
             stp.eefm_leg_outside_margin=0.05
             stp.eefm_leg_front_margin=0.12
-            stp.eefm_leg_rear_margin=-0.02
+            stp.eefm_leg_rear_margin=0.09
         elif foot == "JSK":
             ## JSK foot : mechanical param is -> inside 0.075, front 0.11, rear 0.11
             stp.eefm_leg_inside_margin=0.07
