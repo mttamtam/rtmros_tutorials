@@ -219,11 +219,12 @@ class URATAHrpsysConfigurator(HrpsysConfigurator):
                                          [3500*1.6*6*0.8, 3500*1.6*6*0.8, 3500*1.6*1.1*1.5*0.8]]
             stp.eefm_swing_pos_damping_gain = stp.eefm_pos_damping_gain[0]
             stp.eefm_swing_rot_damping_gain = stp.eefm_rot_damping_gain[0]
-            stp.eefm_rot_compensation_limit = [math.radians(10), math.radians(10), math.radians(10), math.radians(10)]
-            stp.eefm_pos_compensation_limit = [0.025, 0.025, 0.050, 0.050]
+            stp.eefm_rot_compensation_limit = [math.radians(30), math.radians(30), math.radians(10), math.radians(10)]
+            stp.eefm_pos_compensation_limit = [0.1, 0.1, 0.050, 0.050]
         stp.eefm_swing_damping_force_thre=[200]*3
         stp.eefm_swing_damping_moment_thre=[15]*3
         stp.eefm_use_swing_damping=True
+        stp.eefm_use_force_difference_control=False
         stp.eefm_ee_error_cutoff_freq=20.0
         stp.eefm_swing_rot_spring_gain=[[1.0, 1.0, 1.0]]*4
         stp.eefm_swing_pos_spring_gain=[[1.0, 1.0, 1.0]]*4
